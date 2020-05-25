@@ -3,14 +3,13 @@ package dev.acaica.server.net.packet.`in`.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
-import dev.acaica.server.net.types.VarInt
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x03,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["message"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class ChatMessage : Packet {
+    val message: String = ""
 }

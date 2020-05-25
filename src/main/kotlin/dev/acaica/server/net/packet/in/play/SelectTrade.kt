@@ -5,12 +5,12 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 import dev.acaica.server.net.types.VarInt
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x21,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["selectedSlots"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class SelectTrade : Packet {
+    val selectedSlot: VarInt = VarInt(byteArrayOf())
 }
