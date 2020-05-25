@@ -5,8 +5,8 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x21,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = ["keepAliveID"]
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class KeepAlive(val keepAliveID: Long) : Packet

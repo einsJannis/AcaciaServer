@@ -5,8 +5,8 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x1E,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = ["chunkX", "chunkY"]
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class UnloadChunk(val chunkX: Int, val chunkY: Int) : Packet

@@ -3,10 +3,11 @@ package dev.acaica.server.net.packet.out.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
+import dev.acaica.server.types.Position
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x30,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = ["location"]
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class OpenSignEditor(val location: Position) : Packet

@@ -1,12 +1,19 @@
 package dev.acaica.server.net.packet.out.play
 
+import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
+import dev.acaica.server.net.packet.PacketInformation
 import dev.acaica.server.net.types.Angle
 import dev.acaica.server.net.types.VarInt
 import dev.acaica.server.types.Position
 import dev.einsjannis.math.vector.Vector3D
 import java.util.*
 
+@PacketInformation(
+        packetID = 0x03,
+        state = CommunicationState.PLAY,
+        components = ["entityID", "entityUUID", "type", "x", "y", "z", "yaw", "pitch", "headPitch", "velocityX", "velocityY", "velocityZ"]
+)
 class SpawnLivingEntity(
         val entityID: VarInt,
         val entityUUID: UUID,

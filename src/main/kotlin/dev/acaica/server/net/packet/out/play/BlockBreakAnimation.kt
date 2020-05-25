@@ -3,12 +3,12 @@ package dev.acaica.server.net.packet.out.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
-import dev.acaica.server.net.types.MultiBlockRecord
+import dev.acaica.server.net.types.PacketPosition
 import dev.acaica.server.net.types.VarInt
 
 @PacketInformation(
-        packetID = 0x10,
+        packetID = 0x09,
         state = CommunicationState.PLAY,
-        components = ["chunkX", "chunkY", "recordCount", "record"]
+        components = ["entityID", "location", "destroyStage"]
 )
-class MultiBlockChange(val chunkX: Int, val chunkY: Int, val recordCount: VarInt, val record: Array<MultiBlockRecord>) : Packet
+class BlockBreakAnimation(val entityID: VarInt, val location: PacketPosition, val destroyStage: Byte) : Packet

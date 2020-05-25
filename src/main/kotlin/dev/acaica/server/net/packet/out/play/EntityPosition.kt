@@ -3,10 +3,11 @@ package dev.acaica.server.net.packet.out.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
+import dev.acaica.server.net.types.VarInt
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x29,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = []
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class EntityPosition(val entityID: VarInt, val deltaX: Short, val deltaY: Short, val deltaZ: Short, val onGround: Boolean) : Packet

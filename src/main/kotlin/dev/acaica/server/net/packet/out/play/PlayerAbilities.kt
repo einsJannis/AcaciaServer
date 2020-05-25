@@ -5,8 +5,8 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x32,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = ["flags", "float", "fieldOfViewModifier"]
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class PlayerAbilities(val flags: Byte, val float: Float, val fieldOfViewModifier: Float) : Packet

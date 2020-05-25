@@ -3,10 +3,11 @@ package dev.acaica.server.net.packet.out.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
+import dev.acaica.server.types.Identifier
 
 @PacketInformation(
-        packetID = 0x16,
+        packetID = 0x31,
         state = CommunicationState.PLAY,
-        components = ["windowID", "property", "value"]
+        components = ["windowID", "recipe"]
 )
-class WindowProperty(val windowID: UByte, val property: Short, val value: Short) : Packet
+class CraftRecipeResponse(val windowID: Byte, val recipe: Identifier) : Packet

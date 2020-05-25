@@ -3,12 +3,11 @@ package dev.acaica.server.net.packet.out.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
-import dev.acaica.server.net.types.NBT
 import dev.acaica.server.net.types.PacketPosition
 
 @PacketInformation(
-        packetID = 0x0A,
+        packetID = 0x23,
         state = CommunicationState.PLAY,
-        components = ["location", "action", "nbtData"]
+        components = ["effectID", "location", "data", "disableRelativeVolume"]
 )
-class BlockEntityData(val location: PacketPosition, val action: UByte, val nbtData: NBT) : Packet
+class Effect(val effectID: Int, val location: PacketPosition, val data: Int, val disableRelativeVolume: Boolean) : Packet
