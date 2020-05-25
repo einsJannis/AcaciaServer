@@ -5,12 +5,13 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 import dev.acaica.server.net.types.VarInt
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x22,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["primaryEffect", "secondaryEffect"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class SetBeaconEffect : Packet {
+    val primaryEffect: VarInt = VarInt(byteArrayOf())
+    val secondaryEffect: VarInt = VarInt(byteArrayOf())
 }

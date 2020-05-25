@@ -3,14 +3,14 @@ package dev.acaica.server.net.packet.`in`.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
-import dev.acaica.server.net.types.VarInt
+import java.util.*
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x2B,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["targetPlayer"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class Spectate : Packet {
+    val targetPlayer: UUID = UUID.fromString("")
 }

@@ -3,14 +3,13 @@ package dev.acaica.server.net.packet.`in`.play
 import dev.acaica.server.net.CommunicationState
 import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
-import dev.acaica.server.net.types.VarInt
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x02,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["newDifficulty"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class SetDifficulty : Packet {
+    val newDifficulty: Byte = 0x03
 }

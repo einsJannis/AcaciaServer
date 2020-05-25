@@ -5,12 +5,14 @@ import dev.acaica.server.net.packet.Packet
 import dev.acaica.server.net.packet.PacketInformation
 import dev.acaica.server.net.types.VarInt
 
-@PacketInformation(
-        packetID = 0x00,
+@PacketInformation (
+        packetID = 0x25,
         state = CommunicationState.PLAY,
-        components = ["teleportID"]
+        components = ["entityID", "command", "trackOutput"]
 )
 
-class TeleportConfirm : Packet {
-    var teleportID: VarInt = VarInt(byteArrayOf())
+class UpdateCommandBlockMinecart : Packet {
+    val entityID: VarInt = VarInt(byteArrayOf())
+    val command: String = ""
+    val trackOutput: Boolean = false
 }
